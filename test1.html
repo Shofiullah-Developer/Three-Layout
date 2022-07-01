@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front-end Intern Test 1</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700&family=Raleway:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="root">
+      <div id="nav">
+        <button class="btn active" onclick="layout1()">Layout 1</button>
+        <button class="btn" onclick="layout2()">Layout 2</button>
+        <button class="btn" onclick="layout3()">Layout 3</button>
+      </div>
+      <div id="container">
+        <div class="card item1">
+          <h2>Card 1</h2>
+        </div>
+        <div class="card item2">
+          <h2>Card 2</h2>
+        </div>
+        <div class="card item3">
+          <h2>Card 3</h2>
+        </div>
+        <div class="card item4">
+          <h2>Card 4</h2>
+        </div>
+        <div class="card item5">
+          <h2>Card 5</h2>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        });
+      }
+
+      const container = document.getElementById("container");
+      const cards = document.getElementsByClassName("card");
+      const item1 = document.querySelector(".item1");
+      const item2 = document.querySelector(".item2");
+      const item3 = document.querySelector(".item3");
+      const item4 = document.querySelector(".item4");
+      const item5 = document.querySelector(".item5");
+
+      console.log(card);
+
+      function layout1() {
+        container.style.display = "block";
+        [...cards].forEach(
+          (card) => (
+            (card.style.backgroundColor = "#da1e5d"),
+            (card.style.color = "#fff"),
+            (card.style.height = "100px"),
+            (card.style.display = "flex"),
+            (card.style.alignItems = "center"),
+            (card.style.justifyContent = "center"),
+            (card.style.borderRadius = "10px"),
+            (card.style.margin = "20px"),
+            (card.style.fontSize = "15px"),
+            item2.style.padding="0px",
+            item3.style.padding="0px",
+            item4.style.padding="0px"
+            
+          )
+        );
+      }
+
+      function layout2() {
+        container.style.display = "grid";
+        container.style.gridTemplateColumns = "repeat(3, 1fr)";
+        item1.style.gridRow = "1";
+        item1.style.gridColumn = "1 / 2";
+        item3.style.gridRow = "1";
+        item3.style.gridColumn = "3 / 4";
+        item5.style.gridRow = "2";
+        item5.style.gridColumn = "2 / 3";
+
+        [...cards].forEach(
+          (card) => (
+            (card.style.backgroundColor = "#da1e5d"),
+            (card.style.color = "#fff"),
+            (card.style.fontSize = "20px"),
+            (card.style.height = "300px"),
+            (card.style.margin = "15px"),
+            (card.style.display = "flex"),
+            (card.style.alignItems = "center"),
+            (card.style.justifyContent = "center"),
+            (card.style.borderRadius = "10px"),
+            (card.style.flex = "1"),
+            item2.style.padding="0px",
+            item3.style.padding="0px",
+            item4.style.padding="0px"
+          )
+        );
+      }
+
+      function layout3() {
+        container.style.display = "grid";
+        container.style.gridTemplateColumns = "repeat(5, 1fr)";
+        item1.style.gridRow = "1";
+        item1.style.gridColumn = "1 / 6";
+        item3.style.gridRow = "2";
+        item3.style.gridColumn = "2 / 5";
+        item5.style.gridRow = "3";
+        item5.style.gridColumn = "1 / 6";
+
+        [...cards].forEach(
+          (card) => (
+            (card.style.backgroundColor = "#da1e5d"),
+            (card.style.color = "#fff"),
+            (card.style.fontSize = "15px"),
+            (card.style.height = "100px"),
+            (card.style.display = "flex"),
+            (card.style.alignItems = "center"),
+            (card.style.justifyContent = "center"),
+            (card.style.borderRadius = "10px"),
+            (card.style.margin = "10px"),
+            item2.style.padding="85px",
+            item3.style.padding="85px",
+            item4.style.padding="85px"
+
+          )
+        );
+      }
+    </script>
+  </body>
+</html>
